@@ -1,45 +1,119 @@
-<!DOCTYPE html>
-<html lang="pt">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Comparador de Versões - Nissan Ariya</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <div class="container">
-        <h1>Comparador de Versões - Nissan Ariya</h1>
-        <div class="selectors">
-            <select id="version1" onchange="updateComparison()">
-                <option value="">Selecione a Versão</option>
-                <option value="engage">Engage</option>
-                <option value="advance">Advance</option>
-                <option value="evolve">Evolve</option>
-                <option value="evolvePlus">Evolve+</option>
-            </select>
-            <select id="version2" onchange="updateComparison()">
-                <option value="">Selecione a Versão</option>
-                <option value="engage">Engage</option>
-                <option value="advance">Advance</option>
-                <option value="evolve">Evolve</option>
-                <option value="evolvePlus">Evolve+</option>
-            </select>
-        </div>
-        <div class="comparison">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Especificações</th>
-                        <th id="version1Title">Versão 1</th>
-                        <th id="version2Title">Versão 2</th>
-                    </tr>
-                </thead>
-                <tbody id="comparisonTable">
-                    <!-- As linhas de especificações serão geradas aqui -->
-                </tbody>
-            </table>
-        </div>
-    </div>
-    <script src="script.js"></script>
-</body>
-</html>
+/* Reset básico */
+body, h1, h2, h3, p, ul, li {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 2px solid #e4e4e4;
+}
+
+h1 {
+    text-align: center;
+    color: #d71920; /* Vermelho Nissan */
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.selectors {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+select {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: 2px solid #d71920; /* Vermelho Nissan */
+    border-radius: 5px;
+    outline: none;
+    background-color: #ffffff;
+    color: #333;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+select:hover, select:focus {
+    border-color: #a0161b; /* Vermelho escuro */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-size: 14px;
+    background-color: #ffffff;
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border: 1px solid #e4e4e4;
+}
+
+th {
+    background-color: #d71920; /* Vermelho Nissan */
+    color: #ffffff;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 16px;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+td {
+    font-size: 14px;
+    color: #333;
+}
+
+.comparison {
+    overflow-x: auto;
+}
+
+/* Botões */
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #d71920;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #a0161b;
+}
+
+/* Rodapé */
+footer {
+    margin-top: 40px;
+    text-align: center;
+    font-size: 14px;
+    color: #777;
+    padding: 10px 0;
+    background-color: #333;
+    color: #fff;
+}
